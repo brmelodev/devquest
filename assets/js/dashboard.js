@@ -3,6 +3,8 @@ JSON.parse(
 localStorage.getItem("user")
 );
 
+if(user){
+
 document
 .getElementById("player-card")
 .innerHTML =
@@ -20,3 +22,37 @@ document
 
 </div>
 `;
+
+}
+
+const coursesContainer =
+document.getElementById(
+"courses-list"
+);
+
+if(
+coursesContainer &&
+typeof courses !== "undefined"
+){
+
+coursesContainer.innerHTML =
+
+courses.map(course =>
+
+`
+<div class="course-card">
+
+<h3>${course.title}</h3>
+
+<p>${course.description}</p>
+
+<a href="curso.html?id=${course.id}">
+Acessar Curso
+</a>
+
+</div>
+`
+
+).join("");
+
+}

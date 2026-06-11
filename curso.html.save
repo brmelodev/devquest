@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Curso</title>
+</head>
+
+<body>
+
+<h1 id="course-title"></h1>
+
+<p id="course-description"></p>
+
+<h2>Aulas</h2>
+
+<div id="lessons-list"></div>
+
+<script src="assets/data/courses.js"></script>
+
+<script>
+
+const params =
+new URLSearchParams(
+window.location.search
+);
+
+const courseId =
+params.get("id");
+
+const course =
+courses.find(
+c => c.id === courseId
+);
+
+if(course){
+
+document.getElementById(
+"course-title"
+).textContent =
+course.title;
+
+document.getElementById(
+"course-description"
+).textContent =
+course.description;
+
+document.getElementById(
+"lessons-list"
+).innerHTML =
+
+course.lessons.map(
+lesson =>
+
+`
+<div>
+
+<a href="aula.html?course=${course.id}&lesson=${lesson.id}">
+
+📘 ${lesson.title}
+
+</a>
+
+</div>
+`
+
+).join("");
+
+}
+
+</script>
+
+</body>
+
+</html>
+x

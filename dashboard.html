@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevQuest Dashboard</title>
 
-<meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
-
-<title>Dashboard</title>
-
-<link rel="stylesheet"
-href="assets/css/dashboard.css">
-
+    <link rel="stylesheet" href="assets/css/dashboard.css">
 </head>
 
 <body>
 
 <header>
-
-<h1>🎮 DevQuest Dashboard</h1>
-
+    <h1>🚀 DevQuest</h1>
 </header>
 
-<section id="player-card">
+<section id="player-card"></section>
+
+<button onclick="gainXP()">
+Ganhar 10 XP
+</button>
+
+<section>
+
+<h2>Cursos</h2>
+
+<div id="courses-list">
+
+</div>
 
 </section>
 
-<section class="courses">
+<section>
 
-<div class="course">
-📘 Lógica de Programação
-</div>
+<h2>Conquistas</h2>
 
-<div class="course">
-🐍 Python
-</div>
+<div id="achievements"></div>
 
 </section>
 
+<script src="assets/data/courses.js"></script>
+<script src="assets/js/xp.js"></script>
 <script src="assets/js/dashboard.js"></script>
 
 </body>
